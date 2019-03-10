@@ -1,4 +1,4 @@
-const container = document.querySelector('.grid-container');
+const container = document.querySelector('.grid');
 
 const sketchGrid = document.createElement('div');
 sketchGrid.classList.add('sketch-grid');

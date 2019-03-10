@@ -1,6 +1,11 @@
 .grid-container {
+  margin: 10px;
+}
+
+.grid {
   display: inline-block;
 }
+
 
 .sketch-grid {
   display: grid;
