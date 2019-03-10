@@ -16,3 +16,7 @@
 .sketch-grid-cell {
   background-color: white;
 }
+
+.colored-cell {
+  background-color: black;
+}
