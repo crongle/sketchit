@@ -1,3 +1,12 @@
 .sketch-grid {
+  display: grid;
+  grid-template-columns: repeat(16, 40px);
+  grid-template-rows: repeat(16, 40px);
+
   background-color: green;
+
+}
+
+.sketch-grid-cell {
+  background-color: red;
 }

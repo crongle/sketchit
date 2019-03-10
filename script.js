@@ -2,7 +2,14 @@ const container = document.querySelector('.grid-container');
 
 const sketchGrid = document.createElement('div');
 sketchGrid.classList.add('sketch-grid');
-sketchGrid.textContent = 'sketch grid test';
+
+for  (i = 0; i < 256; ++i) {
+const sketchGridCell = document.createElement('div');
+sketchGridCell.classList.add('sketch-grid-cell');
+sketchGridCell.textContent = 'sgc';
+sketchGrid.appendChild(sketchGridCell);
+}
+
 container.appendChild(sketchGrid);
 
 /*
