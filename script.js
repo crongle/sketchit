@@ -6,11 +6,18 @@ sketchGrid.classList.add('sketch-grid');
 for  (i = 0; i < 256; ++i) {
 const sketchGridCell = document.createElement('div');
 sketchGridCell.classList.add('sketch-grid-cell');
+sketchGridCell.id = "cell" + i;
 sketchGridCell.textContent = 'sgc';
+sketchGridCell.addEventListener('mouseover', changeCellColor, false);
 sketchGrid.appendChild(sketchGridCell);
 }
 
 container.appendChild(sketchGrid);
+
+function changeCellColor(e) {
+  e.target.style.color = 'purple';
+  //sketchGridCell#cellNumber.setAttribute("style", "background-color: black;");
+}
 
 /*
 const content = document.createElement('div'); // Creating the first Div
