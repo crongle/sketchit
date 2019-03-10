@@ -1,5 +1,9 @@
-.grid-container {
+body {
   margin: 10px;
+}
+
+.grid-container {
+  margin-top: 10px;
 }
 
 .grid {
