@@ -9,8 +9,8 @@ function drawGrid(z, sketchGrid) {
   for  (a = 0; a < Math.pow(z, 2); ++a) {
     const sketchGridCell = document.createElement('div');
     sketchGridCell.classList.add('sketch-grid-cell');
-    sketchGrid.style.gridTemplateColumns=('repeat(' + z + ', 40px)');
-    sketchGrid.style.gridTemplateRows=('repeat(' + z + ', 40px)');
+    sketchGrid.style.gridTemplateColumns=('repeat(' + z + ', ' + (800 / z) + 'px)');
+    sketchGrid.style.gridTemplateRows=('repeat(' + z + ', ' + (800 / z) + 'px)');
     sketchGridCell.id = "cell" + a;
     sketchGridCell.addEventListener('mouseover', changeCellColor, false);
     sketchGrid.appendChild(sketchGridCell);
