@@ -5,10 +5,12 @@ const sketchGrid = document.createElement('div');
 sketchGrid.classList.add('sketch-grid', 'sketch-grid-layout');
 
 // Draws the grid of cells based on input given
-function drawGrid(z) {
-  for  (a = 0; a < z; ++a) {
+function drawGrid(z, sketchGrid) {
+  for  (a = 0; a < Math.pow(z, 2); ++a) {
     const sketchGridCell = document.createElement('div');
     sketchGridCell.classList.add('sketch-grid-cell');
+    sketchGrid.style.gridTemplateColumns=('repeat(' + z + ', 40px)');
+    sketchGrid.style.gridTemplateRows=('repeat(' + z + ', 40px)');
     sketchGridCell.id = "cell" + a;
     sketchGridCell.textContent = 'sgc';
     sketchGridCell.addEventListener('mouseover', changeCellColor, false);
@@ -18,14 +20,11 @@ function drawGrid(z) {
 
 // Resets drawn grids, prompts for size of new grid, draws new grid
 function gridReset() {
-  let gridToRemove = document.querySelector('.sketchGrid');
-  gridToRemove.parentNode.removeChild(gridToRemove);
+  let child = document.querySelector('.sketch-grid');
+  child.parentNode.removeChild(child);
 
   let gridSize = prompt('How many units square would you like the next grid to be?');
-  sketchGrid.style.gridTemplateColumns=('repeat(' + gridSize + ', 40px)');
-  sketchGrid.style.gridTemplateRows=('repeat(' + gridSize + ', 40px)');
-  gridSize = gridSize * gridSize;
-  drawGrid(gridSize);
+  drawGrid(gridSize, sketchGrid);
   container.appendChild(sketchGrid);
 }
 
@@ -34,4 +33,5 @@ function changeCellColor(e) {
   e.target.classList.add('colored-cell');
 }
 
-drawGrid(64);
+drawGrid(16, sketchGrid);
+container.appendChild(sketchGrid)
