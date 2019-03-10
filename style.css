@@ -6,7 +6,6 @@
   display: inline-block;
 }
 
-
 .sketch-grid {
   display: grid;
   grid-gap: 2px;
@@ -14,17 +13,6 @@
   background-color: grey;
 }
 
-.sketch-grid-layout {
-  grid-template-columns: repeat(16, 40px);
-  grid-template-rows: repeat(16, 40px);
-}
-
-
-
 .sketch-grid-cell {
   background-color: white;
-}
-
-.colored-cell {
-  background-color: black;
 }

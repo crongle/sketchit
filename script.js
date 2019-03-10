@@ -2,7 +2,7 @@
 const container = document.querySelector('.grid');
 // Initialised the internal grid container
 let sketchGrid = document.createElement('div');
-sketchGrid.classList.add('sketch-grid', 'sketch-grid-layout');
+sketchGrid.classList.add('sketch-grid');
 
 // Draws the grid of cells based on input given
 function drawGrid(z, sketchGrid) {
@@ -32,7 +32,17 @@ function removePreviousGrid() {
   }
 }
 
-// Colors cell backgrounds to black
+// Colors cell backgrounds to random rgb values
 function changeCellColor(e) {
-  e.target.classList.add('colored-cell');
+  function random(number) { // Generates a whole value between 0 and 255 for rgb values
+    return Math.floor(Math.random()*number);
+  }
+  function generateFillColor() { // Constructs the background color style statement
+    let fillColor1 = random(255);
+    let fillColor2 = random(255);
+    let fillColor3 = random(255);
+    let colorFillString = 'rgb(' + fillColor1 + ', ' + fillColor2+ ', ' + fillColor3 + ')';
+    return colorFillString;
+  }
+  e.target.style.backgroundColor = generateFillColor(); // Background color statement is applied
 }
